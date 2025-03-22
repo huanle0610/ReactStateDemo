@@ -1,0 +1,13 @@
+npx --no -- commitlint --edit $1 || {
+  echo ""
+  echo "❌ Commit message validation failed!"
+  echo "💡 Please follow the Conventional Commits format:"
+  echo "   <type>: <subject>"
+  echo ""
+  echo "   type must be one of [build, chore, ci, docs, feat, fix, perf, refactor, revert, style, test] [type-enum]"
+  echo "   Example: feat: add user authentication"
+  echo "open commitlint.config.js to see the rules"
+  echo "🔍 Recent commit messages for reference:"
+  git log --pretty=format:"%h %ad %s" --date=short -n 5
+  exit 1
+}
