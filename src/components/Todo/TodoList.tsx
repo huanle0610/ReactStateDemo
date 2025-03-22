@@ -1,6 +1,6 @@
 import React from 'react';
 import { List, Button, Checkbox } from 'antd';
-import { Todo } from '../atoms/todoAtoms';
+import { Todo } from '../../atoms/todoAtoms';
 
 interface TodoListProps {
   todos: Todo[];
