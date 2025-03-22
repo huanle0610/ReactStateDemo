@@ -13,15 +13,20 @@ const ProportionalFunctionPage: React.FC = () => {
         <Col span={12}>
           <label>Slope (k):</label>
           <Slider
-            min={-10}
-            max={10}
+            min={-100}
+            max={100}
             step={0.1}
             value={k}
             onChange={(value) => setK(value)}
+            marks={{
+              [-100]: '-100',
+              0: '0', // Add zero as a marker
+              100: '100',
+            }}
           />
           <InputNumber
-            min={-10}
-            max={10}
+            min={-100}
+            max={100}
             step={0.1}
             value={k}
             onChange={(value) => setK(value || 0)}
@@ -31,15 +36,20 @@ const ProportionalFunctionPage: React.FC = () => {
         <Col span={12}>
           <label>Intercept (b):</label>
           <Slider
-            min={-10}
-            max={10}
+            min={-100}
+            max={100}
             step={0.1}
             value={b}
             onChange={(value) => setB(value)}
+            marks={{
+              [-100]: '-100',
+              0: '0', // Add zero as a marker
+              100: '100',
+            }}
           />
           <InputNumber
-            min={-10}
-            max={10}
+            min={-100}
+            max={100}
             step={0.1}
             value={b}
             onChange={(value) => setB(value || 0)}

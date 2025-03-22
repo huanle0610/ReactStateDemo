@@ -23,6 +23,7 @@ const ProportionalFunction: React.FC<ProportionalFunctionProps> = ({
       jsxBoard.current = JXG.JSXGraph.initBoard(boardRef.current.id, {
         boundingbox: [-5, 10, 5, -5],
         axis: true,
+        showCopyright: false,
       });
 
       // Draw the proportional function y = kx + b
