@@ -2,9 +2,12 @@ import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import AppLayout from './layout/AppLayout';
 import routes from './layout/routes';
+import { Inspector } from 'react-dev-inspector';
 
 const App: React.FC = () => {
-  return (
+  const isDev = process.env.NODE_ENV === 'development';
+
+  const AppContent = (
     <Router>
       <AppLayout>
         <Suspense fallback={<div>Loading...</div>}>
@@ -17,6 +20,8 @@ const App: React.FC = () => {
       </AppLayout>
     </Router>
   );
+
+  return isDev ? <Inspector keys={['F9']}>{AppContent}</Inspector> : AppContent;
 };
 
 export default App;
