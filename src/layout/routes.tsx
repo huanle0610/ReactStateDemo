@@ -1,4 +1,4 @@
-import React, { lazy } from 'react';
+import { lazy } from 'react';
 
 // Lazy load the pages
 const TodoPage = lazy(() => import('../pages/TodoPage'));

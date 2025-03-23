@@ -52,8 +52,8 @@ const LinearFunction: React.FC<ProportionalFunctionProps> = ({ k, b }) => {
         // const y = coords[1];
 
         // console.log(x, y, graph.Y(x), graph.hasPoint(x, y),graph.hasPoint(0,4), 'xy33'); // Debugging log
-        board.create('point', [x, graph.Y(x)], {
-          name: `(${x}, ${graph.Y(x)})`,
+        board.create('point', [x, graph.Y(x, true)], {
+          name: `(${x}, ${graph.Y(x, true)})`,
           //   size: 2,
           //   strokeColor: 'red',
         });
@@ -68,7 +68,7 @@ const LinearFunction: React.FC<ProportionalFunctionProps> = ({ k, b }) => {
         const x = Math.round(coords[0]);
         setHoverCoords({
           x: x,
-          y: graph.Y(x),
+          y: graph.Y(x, true),
         });
       });
     }

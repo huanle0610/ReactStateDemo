@@ -1,5 +1,5 @@
 import React from 'react';
-import { List, Button, Checkbox } from 'antd';
+import { List, Button } from 'antd';
 import { Todo } from '../../atoms/todoAtoms';
 
 interface TodoListProps {
@@ -8,7 +8,11 @@ interface TodoListProps {
   onToggleComplete: (id: number) => void;
 }
 
-const TodoList: React.FC<TodoListProps> = ({ todos, onRemove, onToggleComplete }) => {
+const TodoList: React.FC<TodoListProps> = ({
+  todos,
+  onRemove,
+  onToggleComplete,
+}) => {
   // Sort todos by createdAt in descending order
   const sortedTodos = [...todos].sort((a, b) => b.createdAt - a.createdAt);
 
@@ -22,21 +26,23 @@ const TodoList: React.FC<TodoListProps> = ({ todos, onRemove, onToggleComplete }
             <Button type="link" onClick={() => onRemove(todo.id)}>
               Remove
             </Button>,
-            ]}
-            >
-            <Button
+          ]}
+        >
+          <Button
             type="text"
             icon={todo.completed ? '✔️' : '○'}
             onClick={() => onToggleComplete(todo.id)}
-            size='small'
+            size="small"
             style={{ border: 'none' }}
-            />
+          />
           <div>
             {todo.completed ? <del>{todo.text}</del> : todo.text}
             <div style={{ fontSize: '12px', color: 'gray' }}>
               Created: {new Date(todo.createdAt).toLocaleString()}
               {todo.completedAt && (
-                <div>Completed: {new Date(todo.completedAt).toLocaleString()}</div>
+                <div>
+                  Completed: {new Date(todo.completedAt).toLocaleString()}
+                </div>
               )}
             </div>
           </div>

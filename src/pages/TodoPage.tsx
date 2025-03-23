@@ -1,9 +1,16 @@
-import React from "react";
-import { useAtom } from "jotai";
-import { todosAtom, incompleteTodosAtom, completedTodosAtom } from "../atoms/todoAtoms";
-import AddTodoForm from "../components/Todo/AddTodoForm";
-import TodoList from "../components/Todo/TodoList";
-import { addTodo, removeTodo, toggleTodo } from "../utils/todoHelpers";
+import React from 'react';
+import { useAtom } from 'jotai';
+import {
+  todosAtom,
+  incompleteTodosAtom,
+  completedTodosAtom,
+} from '../atoms/todoAtoms';
+import AddTodoForm from '../components/Todo/AddTodoForm';
+import TodoList from '../components/Todo/TodoList';
+import { addTodo, removeTodo, toggleTodo } from '../utils/todoHelpers';
+import withRenderCount from '../hoc/withRenderCount';
+
+const TrackedTodoList = withRenderCount(TodoList); // Wrap TodoPage with the HOC
 
 const TodoPage: React.FC = () => {
   const [todos, setTodos] = useAtom(todosAtom);
@@ -33,17 +40,19 @@ const TodoPage: React.FC = () => {
   };
 
   return (
-    <div style={{ padding: "16px" }}>
+    <div style={{ padding: '16px' }}>
       <h1>
         Todo App
-        <span style={{ fontSize: "12px", fontWeight: "normal", marginLeft: "8px" }}>
-          <span>Todo:</span> {addedCount} <span>Complete:</span> {completedCount}{" "}
-          <span>Total:</span> {totalCount}
+        <span
+          style={{ fontSize: '12px', fontWeight: 'normal', marginLeft: '8px' }}
+        >
+          <span>Todo:</span> {addedCount} <span>Complete:</span>{' '}
+          {completedCount} <span>Total:</span> {totalCount}
         </span>
       </h1>
 
       <AddTodoForm addTodo={handleAddTodo} />
-      <TodoList
+      <TrackedTodoList
         todos={todos}
         onRemove={handleRemoveTodo}
         onToggleComplete={handleToggleComplete}
