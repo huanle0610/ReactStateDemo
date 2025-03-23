@@ -1,38 +1,19 @@
 {
-  "name": "react-state-demo",
+  "name": "@react-state-demo/monorepo",
+  "version": "1.0.0",
+  "description": "",
   "private": true,
-  "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint . --ext .ts,.tsx",
-    "preview": "vite preview",
-    "commit": "git-cz --hook",
-    "format": "prettier --write .",
-    "prepare": "husky"
-  },
-  "dependencies": {
-    "antd": "^5.24.4",
-    "immer": "^10.1.1",
-    "jotai": "^2.12.2",
-    "jsxgraph": "^1.10.1",
-    "lodash": "^4.17.21",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-router-dom": "^7.4.0"
+    "preinstall": "npx -y only-allow pnpm",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.8.0",
     "@commitlint/config-conventional": "^19.8.0",
     "@commitlint/cz-commitlint": "^19.8.0",
     "@eslint/js": "^9.21.0",
-    "@react-dev-inspector/vite-plugin": "^2.0.1",
-    "@types/lodash": "^4.17.16",
-    "@types/react": "^18.3.1",
-    "@types/react-dom": "^18.3.1",
-    "@vitejs/plugin-react-swc": "^3.8.0",
-    "commitizen": "^4.3.1",
+    "@types/node": "^22.13.11",
     "eslint": "^9.21.0",
     "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-react-refresh": "^0.4.19",
@@ -41,20 +22,10 @@
     "inquirer": "^9.3.7",
     "lint-staged": "^15.5.0",
     "prettier": "^3.5.3",
-    "react-dev-inspector": "^2.0.1",
     "typescript": "~5.7.2",
-    "typescript-eslint": "^8.24.1",
-    "vite": "^6.2.0"
+    "typescript-eslint": "^8.24.1"
   },
-  "config": {
-    "commitizen": {
-      "path": "@commitlint/cz-commitlint"
-    }
-  },
-  "lint-staged": {
-    "*.{ts,tsx,js,jsx,json,css,md}": [
-      "prettier --write",
-      "eslint --fix"
-    ]
-  }
+  "keywords": [],
+  "author": "hl",
+  "license": "ISC"
 }

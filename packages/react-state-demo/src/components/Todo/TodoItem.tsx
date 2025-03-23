@@ -17,7 +17,12 @@ const TodoItem: React.FC<TodoItemProps> = ({ todo, onToggle, onRemove }) => {
       <Checkbox checked={todo.completed} onChange={() => onToggle(todo.id)}>
         {todo.text}
       </Checkbox>
-      <Button type="link" danger onClick={() => onRemove(todo.id)} style={{ marginLeft: '8px' }}>
+      <Button
+        type="link"
+        danger
+        onClick={() => onRemove(todo.id)}
+        style={{ marginLeft: '8px' }}
+      >
         Remove
       </Button>
     </div>

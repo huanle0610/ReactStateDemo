@@ -1,4 +1,4 @@
-import {produce} from 'immer';
+import { produce } from 'immer';
 import { Todo } from '../atoms/todoAtoms';
 
 export const addTodo = (todos: Todo[], newTodo: Todo) => {

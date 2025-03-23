@@ -1,0 +1,44 @@
+{
+  "name": "react-state-demo",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint . --ext .ts,.tsx",
+    "preview": "vite preview",
+    "commit": "git-cz",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "antd": "^5.24.4",
+    "immer": "^10.1.1",
+    "jotai": "^2.12.2",
+    "jsxgraph": "^1.10.1",
+    "lodash": "^4.17.21",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.4.0"
+  },
+  "devDependencies": {
+    "@react-dev-inspector/vite-plugin": "^2.0.1",
+    "@types/lodash": "^4.17.16",
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react-swc": "^3.8.0",
+    "react-dev-inspector": "^2.0.1",
+    "vite": "^6.2.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "@commitlint/cz-commitlint"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx,json,css,md}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
+  }
+}
