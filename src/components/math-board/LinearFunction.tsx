@@ -6,10 +6,7 @@ interface ProportionalFunctionProps {
   b: number;
 }
 
-const ProportionalFunction: React.FC<ProportionalFunctionProps> = ({
-  k,
-  b,
-}) => {
+const LinearFunction: React.FC<ProportionalFunctionProps> = ({ k, b }) => {
   const boardRef = useRef<HTMLDivElement | null>(null);
   const jsxBoard = useRef<JXG.Board | null>(null);
   const [hoverCoords, setHoverCoords] = useState<{
@@ -105,4 +102,4 @@ const ProportionalFunction: React.FC<ProportionalFunctionProps> = ({
   );
 };
 
-export default ProportionalFunction;
+export default LinearFunction;

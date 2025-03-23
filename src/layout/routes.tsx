@@ -3,7 +3,7 @@ import React, { lazy } from 'react';
 // Lazy load the pages
 const TodoPage = lazy(() => import('../pages/TodoPage'));
 const ProportionalFunctionPage = lazy(
-  () => import('../pages/ProportionalFunctionPage')
+  () => import('../pages/LinearFunctionPage')
 );
 
 // Define the routes in an array

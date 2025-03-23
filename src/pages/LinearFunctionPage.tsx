@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { Slider, InputNumber, Row, Col, Tag, Flex } from 'antd';
-import ProportionalFunction from '../components/ProportionalFunction';
+import LinearFunction from '../components/math-board/LinearFunction';
 
-const ProportionalFunctionPage: React.FC = () => {
+const LinearFunctionPage: React.FC = () => {
   const [k, setK] = useState(2); // Initial slope
   const [b, setB] = useState(4); // Initial intercept
 
   return (
     <div style={{ padding: '16px' }}>
-      <h1>Proportional Function</h1>
+      <h1>Linear Function: y = kx + b</h1>
       <Flex>
         {[
           [1, 0],
@@ -86,9 +86,9 @@ const ProportionalFunctionPage: React.FC = () => {
           />
         </Col>
       </Row>
-      <ProportionalFunction k={k} b={b} />
+      <LinearFunction k={k} b={b} />
     </div>
   );
 };
 
-export default ProportionalFunctionPage;
+export default LinearFunctionPage;
