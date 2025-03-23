@@ -11,6 +11,18 @@ interface AppLayoutProps {
 const AppLayout: React.FC<AppLayoutProps> = ({ children }) => {
   const location = useLocation(); // Get the current location for menu highlighting
 
+  // Define menu items
+  const menuItems = [
+    {
+      key: '/',
+      label: <Link to="/">Todo Page</Link>,
+    },
+    {
+      key: '/Linear-function',
+      label: <Link to="/Linear-function">Linear function</Link>,
+    },
+  ];
+
   return (
     <ConfigProvider
       theme={{
@@ -34,16 +46,8 @@ const AppLayout: React.FC<AppLayoutProps> = ({ children }) => {
             theme="dark"
             mode="horizontal"
             selectedKeys={[location.pathname]} // Highlight the active menu item
-          >
-            <Menu.Item key="/">
-              <Link to="/">Todo Page</Link>
-            </Menu.Item>
-            <Menu.Item key="/proportional-function">
-              <Link to="/proportional-function">
-                Proportional Function Page
-              </Link>
-            </Menu.Item>
-          </Menu>
+            items={menuItems} // Use the items prop
+          />
         </Header>
         <Content style={{ padding: '16px' }}>{children}</Content>
       </Layout>

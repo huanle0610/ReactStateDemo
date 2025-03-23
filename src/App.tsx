@@ -1,20 +1,19 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import AppLayout from './components/AppLayout';
-import TodoPage from './pages/TodoPage';
-import ProportionalFunctionPage from './pages/ProportionalFunctionPage';
+import AppLayout from './layout/AppLayout';
+import routes from './layout/routes';
 
 const App: React.FC = () => {
   return (
     <Router>
       <AppLayout>
-        <Routes>
-          <Route path="/" element={<TodoPage />} />
-          <Route
-            path="/proportional-function"
-            element={<ProportionalFunctionPage />}
-          />
-        </Routes>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Routes>
+            {routes.map((route, index) => (
+              <Route key={index} path={route.path} element={route.element} />
+            ))}
+          </Routes>
+        </Suspense>
       </AppLayout>
     </Router>
   );
