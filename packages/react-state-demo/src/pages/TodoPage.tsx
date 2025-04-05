@@ -41,7 +41,7 @@ const TodoPage: React.FC = () => {
 
   return (
     <div style={{ padding: '16px' }}>
-      <h1>
+      <h1 className="text-2xl font-bold mb-4">
         Todo App
         <span
           style={{ fontSize: '12px', fontWeight: 'normal', marginLeft: '8px' }}

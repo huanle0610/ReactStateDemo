@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "preinstall": "npx -y only-allow pnpm",
+    "remove-all": "pnpm recursive exec -- rm -rf node_modules",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
