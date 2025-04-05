@@ -21,6 +21,10 @@ const AppLayout: React.FC<AppLayoutProps> = ({ children }) => {
       key: '/Linear-function',
       label: <Link to="/Linear-function">Linear function</Link>,
     },
+    {
+      key: '/apple',
+      label: <Link to="/apple">Apple</Link>,
+    },
   ];
 
   return (

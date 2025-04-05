@@ -5,6 +5,9 @@ const TodoPage = lazy(() => import('../pages/TodoPage'));
 const ProportionalFunctionPage = lazy(
   () => import('../pages/LinearFunctionPage')
 );
+const AppleBasketTotal = lazy(
+  () => import('../components/apple-demo/AppleBasketTotal')
+);
 
 // Define the routes in an array
 const routes = [
@@ -15,6 +18,10 @@ const routes = [
   {
     path: '/Linear-function',
     element: <ProportionalFunctionPage />,
+  },
+  {
+    path: '/apple',
+    element: <AppleBasketTotal />,
   },
 ];
 
